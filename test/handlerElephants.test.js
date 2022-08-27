@@ -22,4 +22,10 @@ describe('Testes da função HandlerElephants', () => {
   it('Retornando Undefined', () => {
     expect(handlerElephants()).toBe(undefined);
   });
+  it('Testando sem string', () => {
+    expect(handlerElephants(5)).toBe('Parâmetro inválido, é necessário uma string');
+  });
+  it('retornando null', () => {
+    expect(handlerElephants('')).toBe(null);
+  });
 });
