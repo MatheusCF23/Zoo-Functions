@@ -11,12 +11,15 @@ describe('Testes da função HandlerElephants', () => {
     expect(handlerElephants('averageAge')).toEqual(10.5);
   });
   it('retorna a localização dos elefantes dentro do Zoológico', () => {
-    expect().toEqual();
+    expect(handlerElephants('location')).toBe('NW');
   });
   it('retorna a popularidade dos elefantes', () => {
     expect(handlerElephants('popularity')).toBe(5);
   });
   it('retorna um array com a relação de dias em que é possível visitar os elefantes', () => {
     expect(handlerElephants('availability')).toEqual(['Friday', 'Saturday', 'Sunday', 'Tuesday']);
+  });
+  it('Retornando Undefined', () => {
+    expect(handlerElephants()).toBe(undefined);
   });
 });
