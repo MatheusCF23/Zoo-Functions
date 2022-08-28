@@ -64,6 +64,6 @@ const getOpeningHours = (day, dataHour) => {
   return message;
 };
 
-//console.log(getOpeningHours('Saturday', '10:00-FM'));
+//console.log(getOpeningHours('Saturday', 10));
 
 module.exports = getOpeningHours;
