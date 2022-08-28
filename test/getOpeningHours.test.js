@@ -24,15 +24,24 @@ describe('Testes da função getOpeningHours', () => {
     expect(getOpeningHours()).toEqual(hours);
   });
   it('Verifica ERROR - 1', () => {
-    expect(() => { getOpeningHours('Monday', '15:00-PM'); }).toThrow('The hour must be between 0 and 12');
+    expect(() => { getOpeningHours('Monday', '13:00-AM'); }).toThrow('The hour must be between 0 and 12');
   });
   it('Verifica ERROR - 2', () => {
-    expect(() => { getOpeningHours('Thu', '10:00-PM'); }).toThrow('The day must be valid. Example: Monday');
+    expect(() => { getOpeningHours('Thu', '9:00-AM'); }).toThrow('The day must be valid. Example: Monday');
   });
   it('Verifica ERROR - 3', () => {
-    expect(() => { getOpeningHours('Saturday', '10:00-FM'); }).toThrow('The abbreviation must be \'AM\' or \'PM\'');
+    expect(() => { getOpeningHours('Friday', '09:00-ZM'); }).toThrow('The abbreviation must be \'AM\' or \'PM\'');
   });
   it('Verifica ERROR - 4', () => {
     expect(() => { getOpeningHours('Saturday', 10); }).toThrow('hour.toUpperCase is not a function');
+  });
+  it('Verificando os minutos', () => {
+    expect(() => { getOpeningHours('Tuesday', '09:60-AM'); }).toThrow('The minutes must be between 0 and 59');
+  });
+  it('Verificando a hora com letra', () => {
+    expect(() => { getOpeningHours('Saturday', 'C9:00-AM'); }).toThrow('The hour should represent a number');
+  });
+  it('Verificando os minutos com letra', () => {
+    expect(() => { getOpeningHours('Sunday', '09:c0-AM'); }).toThrow('The minutes should represent a number');
   });
 });
