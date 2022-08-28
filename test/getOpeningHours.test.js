@@ -24,12 +24,12 @@ describe('Testes da função getOpeningHours', () => {
     expect(getOpeningHours()).toEqual(hours);
   });
   it('Verifica ERROR - 1', () => {
-    expect(() => {getOpeningHours('Monday', '15:00-PM')}).toThrow('The hour must be between 0 and 12');
+    expect(() => { getOpeningHours('Monday', '15:00-PM'); }).toThrow('The hour must be between 0 and 12');
   });
   it('Verifica ERROR - 2', () => {
-    expect(() => {getOpeningHours('Thu', '10:00-PM')}).toThrow('The day must be valid. Example: Monday');
+    expect(() => { getOpeningHours('Thu', '10:00-PM'); }).toThrow('The day must be valid. Example: Monday');
   });
   it('Verifica ERROR - 3', () => {
-    expect(() => {getOpeningHours('Saturday', '10:00-FM')}).toThrow('The abbreviation must be \'AM\' or \'PM\'');
+    expect(() => { getOpeningHours('Saturday', '10:00-FM'); }).toThrow('The abbreviation must be \'AM\' or \'PM\'');
   });
 });
