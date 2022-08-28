@@ -32,7 +32,7 @@ describe('Testes da função getOpeningHours', () => {
   it('Verifica ERROR - 3', () => {
     expect(() => { getOpeningHours('Saturday', '10:00-FM'); }).toThrow('The abbreviation must be \'AM\' or \'PM\'');
   });
-  it('Verifica ERROR - 4', () =>{
+  it('Verifica ERROR - 4', () => {
     expect(() => { getOpeningHours('Saturday', 10); }).toThrow('hour.toUpperCase is not a function');
   });
 });
