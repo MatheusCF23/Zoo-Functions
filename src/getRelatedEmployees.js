@@ -1,14 +1,15 @@
+
 const data = require('../data/zoo_data');
 const { employees: funcionario } = data;
 
 function isManager(id) {
-    const retornoVerdadeiro = funcionario.some((gerente) => gerente.managers.find ((a) => a === id));
-    return retornoVerdadeiro;
+  const retornoVerdadeiro = funcionario.some((gerente) => gerente.managers.find((a) => a === id));
+  return retornoVerdadeiro;
 }
 
 function getRelatedEmployees(managerId) {
   if (!(isManager(managerId))) {
-    throw  new  Error('O id inserido não é de uma pessoa colaboradora gerente!');
+    throw new Error('O id inserido não é de uma pessoa colaboradora gerente!');
   }
 
   return funcionario.reduce((um, dois) => {
@@ -18,6 +19,5 @@ function getRelatedEmployees(managerId) {
     return um;
   }, []);
 }
-
 
 module.exports = { isManager, getRelatedEmployees };
