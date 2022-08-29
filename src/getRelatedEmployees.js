@@ -1,5 +1,5 @@
-
 const data = require('../data/zoo_data');
+
 const { employees: funcionario } = data;
 
 function isManager(id) {
