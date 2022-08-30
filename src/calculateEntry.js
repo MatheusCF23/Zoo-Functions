@@ -17,7 +17,7 @@ function calculateEntry(entrants) {
   const valorChild = pessoas.child * prices.child;
   const valorAdult = pessoas.adult * prices.adult;
   const valorSenior = pessoas.senior * prices.senior;
-  const result = valorChild + valorAdult + valorSenior
+  const result = valorChild + valorAdult + valorSenior;
   return result;
 }
 
