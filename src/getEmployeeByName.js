@@ -13,6 +13,6 @@ function getEmployeeByName(employeeName) {
   return retorna;
 }
 
-console.log(getEmployeeByName('Nelson'));
+console.log(getEmployeeByName('Nigel'));
 
 module.exports = getEmployeeByName;
