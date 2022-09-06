@@ -36,5 +36,4 @@ function getEmployeesCoverage(elementos) {
   return lugar.find((cover) => cover.id === worker.id);
 }
 
-
 module.exports = getEmployeesCoverage;
