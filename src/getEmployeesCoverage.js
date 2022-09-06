@@ -17,16 +17,16 @@ function generateEmployeesCoverage() {
   });
 }
 
-function getEmployeesCoverage(element) {
+function getEmployeesCoverage(elementos) {
   // seu código aqui
   const lugar = generateEmployeesCoverage();
-  if (element === undefined) {
+  if (elementos === undefined) {
     return lugar;
   }
-  const { name, id } = element;
+  const { name, id } = elementos;
   let worker;
   if (name !== undefined) {
-    worker = employees.find((elem) => element.firstName === name || elem.lastName === name);
+    worker = employees.find((element) => element.firstName === name || element.lastName === name);
   } else if (id !== undefined) {
     worker = employees.find((el) => el.id === id);
   }
@@ -35,5 +35,6 @@ function getEmployeesCoverage(element) {
   }
   return lugar.find((cover) => cover.id === worker.id);
 }
+
 
 module.exports = getEmployeesCoverage;
